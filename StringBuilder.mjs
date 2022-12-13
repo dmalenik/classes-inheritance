@@ -41,7 +41,7 @@ StringBuilder.prototype.remove = function (str) {
   return this;
 };
 StringBuilder.prototype.sub = function (from, n) {
-  this.str = this.str.slice(from, to);
+  this.str = this.str.split('').splice(from, n).join('');
 
   return this;
 };
@@ -49,5 +49,11 @@ StringBuilder.prototype.sub = function (from, n) {
 let strBuilder = new StringBuilder("Hello");
 
 console.log(
-  strBuilder.plus(" all", "!").minus(4).multiply(3).divide(4).remove("l").sub(1, 1)
+  strBuilder
+    .plus(" all", "!")
+    .minus(4)
+    .multiply(3)
+    .divide(4)
+    .remove("l")
+    .sub(1, 1)
 );
