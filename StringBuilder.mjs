@@ -23,8 +23,8 @@ StringBuilder.prototype.multiply = function (n) {
   return this;
 };
 
-// k from n = 5
-// k will return first 5 chars, not 4 as per requirements
+// k from n equals 5
+// k will return first 5 chars, not 4 as it's mentioned in the example
 StringBuilder.prototype.divide = function (n) {
   let k = Math.floor(this.str.length / n);
 
@@ -41,19 +41,21 @@ StringBuilder.prototype.remove = function (str) {
   return this;
 };
 StringBuilder.prototype.sub = function (from, n) {
-  this.str = this.str.split('').splice(from, n).join('');
+  this.str = this.str.split("").splice(from, n).join("");
 
   return this;
+};
+StringBuilder.prototype.get = function () {
+  return this.str;
 };
 
 let strBuilder = new StringBuilder("Hello");
 
-console.log(
-  strBuilder
-    .plus(" all", "!")
-    .minus(4)
-    .multiply(3)
-    .divide(4)
-    .remove("l")
-    .sub(1, 1)
-);
+strBuilder
+  .plus(" all", "!")
+  .minus(4)
+  .multiply(3)
+  .divide(4)
+  .remove("l")
+  .sub(1, 1)
+  .get();
