@@ -33,7 +33,15 @@ StringBuilder.prototype.divide = function (n) {
   return this;
 };
 StringBuilder.prototype.remove = function (str) {
-  this.str = this.str.split("").filter((char) => char !== str).join('');
+  this.str = this.str
+    .split("")
+    .filter((char) => char !== str)
+    .join("");
+
+  return this;
+};
+StringBuilder.prototype.sub = function (from, n) {
+  this.str = this.str.slice(from, to);
 
   return this;
 };
@@ -41,5 +49,5 @@ StringBuilder.prototype.remove = function (str) {
 let strBuilder = new StringBuilder("Hello");
 
 console.log(
-  strBuilder.plus(" all", "!").minus(4).multiply(3).divide(4).remove("l")
+  strBuilder.plus(" all", "!").minus(4).multiply(3).divide(4).remove("l").sub(1, 1)
 );
