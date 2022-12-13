@@ -17,7 +17,14 @@ StringBuilder.prototype.minus = function (n) {
 
   return this;
 };
+StringBuilder.prototype.multiply = function (n) {
+  this.str = Array
+    .from({ length: n }, () => [this.str])
+    .join(' ');
+
+  return this;
+};
 
 let strBuilder = new StringBuilder("Hello");
 
-console.log(strBuilder.plus(" all", "!").minus(4));
+console.log(strBuilder.plus(" all", "!").minus(4).multiply(3));
