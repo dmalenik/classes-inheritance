@@ -7,5 +7,12 @@ function StringBuilder(str = "") {
 StringBuilder.prototype = Object.create(Base.prototype);
 StringBuilder.prototype.constructor = StringBuilder;
 
-let s = new StringBuilder("Hello!");
+StringBuilder.prototype.plus = function (...str) { 
+  this.str = str.reduce((prev, curr) => prev + curr, this.str);
 
+  return this;
+};
+
+let strBuilder = new StringBuilder("Hello");
+
+console.log(strBuilder.plus(' all', '!'));
