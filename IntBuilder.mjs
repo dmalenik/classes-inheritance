@@ -39,7 +39,13 @@ class IntBuilder extends Base {
 
     return this;
   }
+
+  static random(from, to) {
+    return Math.round(Math.random() * (to - from) + from);
+  }
 }
+
+IntBuilder.random(10, 100);
 
 let intBuilder = new IntBuilder(10);
 
