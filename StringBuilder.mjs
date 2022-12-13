@@ -33,7 +33,7 @@ StringBuilder.prototype.divide = function (n) {
   return this;
 };
 StringBuilder.prototype.remove = function (str) {
-  this.str = this.str.split("").filter((char) => char !== str);
+  this.str = this.str.split("").filter((char) => char !== str).join('');
 
   return this;
 };
