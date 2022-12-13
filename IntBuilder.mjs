@@ -1,4 +1,4 @@
-import { Base } from "./base-class.mjs";
+import { Base } from "./Base.mjs";
 
 class IntBuilder extends Base {
   constructor(int = 0) {
