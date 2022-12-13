@@ -6,16 +6,23 @@ class IntBuilder extends Base {
     this.int = int;
   }
 
+  get() {
+    return this.int;
+  }
+
   plus(...n) {
-    return n.reduce((prev, curr) => prev + curr, this.int);
+    this.int = n.reduce((prev, curr) => prev + curr, this.int);
+
+    return this;
   }
 
   minus(...n) {
-    return n.reduce((prev, curr) => prev - curr, this.int);
+    this.int = n.reduce((prev, curr) => prev - curr, this.int);
+
+    return this;
   }
 }
 
 let intBuilder = new IntBuilder(10);
 
-console.log(intBuilder.plus(2, 3, 2));
-console.log(intBuilder.minus(1, 2));
+console.log(intBuilder.plus(2, 3, 2).minus(1, 2).get());
