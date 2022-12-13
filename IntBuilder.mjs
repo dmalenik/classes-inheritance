@@ -9,10 +9,13 @@ class IntBuilder extends Base {
   plus(...n) {
     return n.reduce((prev, curr) => prev + curr, this.int);
   }
+
+  minus(...n) {
+    return n.reduce((prev, curr) => prev - curr, this.int);
+  }
 }
 
 let intBuilder = new IntBuilder(10);
 
-console.log(
-  intBuilder.plus(2, 3, 2)
-);
+console.log(intBuilder.plus(2, 3, 2));
+console.log(intBuilder.minus(1, 2));
